@@ -167,6 +167,7 @@ istream &Vector::Read(istream &input) {
     if (dimension == 0){
         if (_data){
             delete[] _data;
+            _data = nullptr;
             _size = 0;
         }
         return input;
@@ -194,4 +195,23 @@ istream &Vector::Read(istream &input) {
     }
     return input;
 }
+
+Vector Vector::operator-() const{
+
+    // loop from 0 to the number of elements in the data list. multiply each element by -1.
+    for(int i = 0; i < _size; i++){
+        _data[i] = _data[i] * -1;
+    }
+    return *this; //todo is this correct? what am I supposed to output?
+}
+
+Vector Vector::operator*(double val) const{
+
+    // loop from 0 to the number of elements in the data list. multiply each element by val.
+    for(int i = 0; i < _size; i++){
+        _data[i] = _data[i] * val;
+    }
+    return *this; //todo is this correct? what am I supposed to output?
+}
+
 

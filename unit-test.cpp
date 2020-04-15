@@ -130,8 +130,46 @@ int main(int argc, char* argv[]) {
 
     cout << "All unit tests passed" << endl;
 
+    //testing operator-()
+    cout << "Testing operator-()" << endl;
+
+    Vector soren(3);
+    soren[0] = 1;
+    soren[1] = 2;
+    soren[2] = 3;
+    assert(DoubleEquals(soren[0], 1));
+    assert(DoubleEquals(soren[1], 2));
+    assert(DoubleEquals(soren[2], 3));
+
+    Vector SorenMinus = -soren;
+
+    assert(DoubleEquals(SorenMinus[0], -1));
+    assert(DoubleEquals(SorenMinus[1], -2));
+    assert(DoubleEquals(SorenMinus[2], -3));
+
+    cout << "Operator-() passed all tests" << endl;
+
+
+    //testing operator*(double val)
+
+    Vector soren2(3);
+    soren2[0] = 1;
+    soren2[1] = 2;
+    soren2[2] = 3;
+
+    cout << "Testing operator*(double val)const" << endl;
+    Vector SorenMultiply = soren2 * 4;
+
+    assert(DoubleEquals(SorenMultiply[0], 4));
+    assert(DoubleEquals(SorenMultiply[1], 8));
+    assert(DoubleEquals(SorenMultiply[2], 12));
+
+    cout << "Operator*(double val)const passed all tests" << endl;
+
+
     return 0;
 }
 bool DoubleEquals(double a, double b, double epsilon){
     return abs(a - b) < epsilon;
+
 }

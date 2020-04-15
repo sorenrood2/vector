@@ -46,6 +46,10 @@ public:
 
     ostream& Write(ostream& output)const; // Can we overload this <<
     istream& Read(istream& input); // Can we overload this >>
+
+    //small assignment... new methods
+    Vector operator-() const;
+    Vector operator*(double val) const;
 };
 
 #endif //VECTOR_VECTOR_H
